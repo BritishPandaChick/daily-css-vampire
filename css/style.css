@@ -1,0 +1,141 @@
+/* Inspired by https://codepen.io/kymarkak/pen/LxmaEV */
+
+body  {
+  background: orange;
+}
+
+.vampire {
+  position: relative;
+  margin: 0 auto;
+  width: 800px;
+  height: 600px;
+}
+
+.head {
+  position: absolute;
+  left: calc((100% - 20%)/2);
+  top: 10%;
+  width: 40%;
+  height: 50%;
+  background: black;
+  border-radius: 50%;
+  box-shadow: inset 0 45px 0 0 rgba(0, 0, 0, .9);
+}
+
+.head::before {
+  content: "";
+  position: absolute;
+  left: 18%;
+  top: 10%;
+  width: 90%;
+  height: 30%;
+  border-radius: 50%;
+  -webkit-transform: rotatex(-10deg) rotatey(5deg);
+  transform: rotatex(-10deg) rotatey(5deg);
+  box-shadow: inset 0 2px 0 0 rbga(200, 200, 200, .4);
+}
+
+.ear {
+  position: absolute;
+  top: 46%;
+  width: 40%;
+  height: 40%;
+  background: white;
+}
+
+.ear.left {
+  left: -10%;
+  border-radius: 60% 0 50% 50%;
+  -webkit-transform: rotate(15deg);
+  transform: rotate(15deg);
+}
+
+.ear.right {
+  right: -10%;
+  border-radius: 0 60% 50% 50%;
+  -webkit-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+}
+
+.face::before, .face::after {
+  content: "";
+  position: absolute;
+  top: 25%;
+  width: 80%;
+  height: 90%;
+  background: white;
+  border-radius: 50%;
+}
+
+.face::before {
+  left: 4%;
+}
+
+.face::after {
+  right: 4%;
+}
+
+.eye {
+  position: absolute;
+  top: 52%;
+  width: 18%;
+  height: 19%;
+  background: red;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.eye.left {
+  left: 24%;
+}
+
+.eye.right {
+  right: 24%;
+}
+
+.eye.left::before, .eye.right::before {
+  content: "";
+  position: absolute;
+  top: 130%;
+  width: 120%;
+  height: 50%;
+  background: pink;
+  border-radius: 50%;
+}
+
+.eye.left::before {
+  left: -60%;
+}
+
+.eye.right::before {
+  right: -60%;
+}
+
+.mouth {
+  position: absolute;
+  left: calc((100% - 28%)/2);
+  top: 87%;
+  width: 28%;
+  height: 18%;
+  background: #8B0000;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.mouth::before, .mouth::after {
+  content: "";
+  position: absolute;
+  top: 5%;
+  border-top: 25px solid white;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+
+.mouth::before {
+  left: 15%;
+}
+
+.mouth::after {
+  right: 15%;
+}
